@@ -31,20 +31,20 @@ end
 -- Survival rule: A live cell with two or three neighbours remains alive.
 
 function love.load()
-
+	
 	love.filesystem.setIdentity("Conway's Game of Life")			-- Identity for system
 	love.keyboard.setKeyRepeat(true)
 
-    love.graphics.setBackgroundColor(104, 136, 248)					-- Set the background color to a nice blue
+	love.graphics.setBackgroundColor(104, 136, 248)					-- Set the background color to a nice blue
 
-    love.window.setTitle("Conway's Game of Life")					-- Window title
-    love.window.setMode(1024, 768)									-- Game window resolution
+	love.window.setTitle("Conway's Game of Life")					-- Window title
+	love.window.setMode(1024, 768)									-- Game window resolution
 
-    gfx.tile = love.graphics.newImage("tile.png")					-- Load textures
-    gfx.black = love.graphics.newImage("black.png")
+	gfx.tile = love.graphics.newImage("tile.png")					-- Load textures
+	gfx.black = love.graphics.newImage("black.png")
 
-    gridSizeX = 80
-    gridSizeY = 80
+	gridSizeX = 80
+	gridSizeY = 80
 
     for i = 0, gridSizeX do
     	cells[i] = {}
