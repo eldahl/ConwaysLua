@@ -1,8 +1,6 @@
 gfx = {}
-sfx = {}
 cells = {}
 cellsUpdate = {}
-
 
 -- To copy functions and variables, the metatables __index has to be equal it self.
 cellMT = {}
@@ -37,7 +35,7 @@ function love.load()
 	love.filesystem.setIdentity("Conway's Game of Life")			-- Identity for system
 	love.keyboard.setKeyRepeat(true)
 
-    love.graphics.setBackgroundColor(104, 136, 248)                 -- Set the background color to a nice blue
+    love.graphics.setBackgroundColor(104, 136, 248)					-- Set the background color to a nice blue
 
     love.window.setTitle("Conway's Game of Life")					-- Window title
     love.window.setMode(1024, 768)									-- Game window resolution
@@ -125,8 +123,12 @@ function love.keypressed(key)
 	if key == "d" 		then update() end
 end
 
+function love.update()
+	update()
+end
+
 function update()
-	for i = 0, gridSizeX do 						-- Tiles
+	for i = 0, gridSizeX do
 	for j = 0, gridSizeY do
 
 		-- Survival rule
@@ -146,18 +148,6 @@ function update()
 		if amountAlive(i,j) >= 4 then
 			cellsUpdate[i][j]:setAlive(false) 
 		end
-
-
-
-		--print("x: " .. i .. " | y: " .. j .. " | " .. amountAlive(i,j))
-
-		--for k = 0, k < #cells do
-			-- Birth rule
-
-			-- Death rule
-
-			-- Survival rule
-    	--end
 	end
 	end
 	
@@ -169,13 +159,6 @@ function update()
 		end
     end
     
-end
-
--- Birth rule: An empty, or "dead" cell with precisely three "live" neighbours (full cell) becomes live. 
--- Death rule: A live cell with zero or one neighbours dies of isolation, a live cell with four or more neighbours dies of overcrowding.
--- Survival rule: A live cell with two or three neighbours remains alive.
-function love.update()
-	update()
 end
 
 function amountAlive(x,y)
