@@ -58,13 +58,13 @@ function love.load()
 		end
     end
 
-    --[[
-    cells[7][7]:setAlive(true)
-    cells[8][8]:setAlive(true)
-    cells[7][8]:setAlive(true)
-    cells[6][8]:setAlive(true)
+	--[[
+	cells[7][7]:setAlive(true)
+	cells[8][8]:setAlive(true)
+	cells[7][8]:setAlive(true)
+	cells[6][8]:setAlive(true)
 	]]
-    
+
 	-- Glider gun
 	cells[10][12]:setAlive(true)
 	cells[10][13]:setAlive(true)
@@ -80,7 +80,7 @@ function love.load()
 	cells[21][15]:setAlive(true)
 
 	cells[22][10]:setAlive(true)
-	cells[22][16]:setAlive(true)	
+	cells[22][16]:setAlive(true)
 	cells[23][10]:setAlive(true)
 	cells[23][16]:setAlive(true)
 
@@ -89,7 +89,7 @@ function love.load()
 	cells[25][11]:setAlive(true)
 	cells[25][15]:setAlive(true)
 
-    cells[26][12]:setAlive(true)
+	cells[26][12]:setAlive(true)
 	cells[26][13]:setAlive(true)
 	cells[26][14]:setAlive(true)
 
@@ -112,7 +112,7 @@ function love.load()
 
 	cells[44][10]:setAlive(true)
 	cells[44][11]:setAlive(true)
-    cells[45][10]:setAlive(true)
+	cells[45][10]:setAlive(true)
 	cells[45][11]:setAlive(true)
 
 end
@@ -146,7 +146,7 @@ function update()
 			cellsUpdate[i][j]:setAlive(false) 
 		end
 		if amountAlive(i,j) >= 4 then
-			cellsUpdate[i][j]:setAlive(false) 
+			cellsUpdate[i][j]:setAlive(false)
 		end
 	end
 	end
@@ -158,7 +158,6 @@ function update()
 			cellsUpdate[i][j] = newCell()
 		end
     end
-    
 end
 
 function amountAlive(x,y)
